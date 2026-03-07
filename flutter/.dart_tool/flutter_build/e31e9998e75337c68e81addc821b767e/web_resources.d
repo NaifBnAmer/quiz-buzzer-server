@@ -1,0 +1,1 @@
+ /Users/naif/quiz-buzzer-final/flutter/build/web/manifest.json:  /Users/naif/quiz-buzzer-final/flutter/web/index.html /Users/naif/quiz-buzzer-final/flutter/web/manifest.json
