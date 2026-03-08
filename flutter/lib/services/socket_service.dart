@@ -18,7 +18,7 @@ class SocketService {
 
   IO.Socket? _socket;
 
-  static const String serverUrl = 'http://192.168.1.100:3000';
+static const String serverUrl = 'https://quiz-buzzer-server-qbwk.onrender.com';
 
   IO.Socket get socket {
     _socket ??= _initSocket();
