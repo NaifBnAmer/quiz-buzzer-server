@@ -1,13 +1,7 @@
-// ============================================================
-//  SocketService — خدمة Socket.IO (Singleton)
-//  + تشغيل صوت الجرس عبر Web Audio API على الويب
-// ============================================================
-
 import 'dart:js_interop';
 import 'package:flutter/foundation.dart' show kIsWeb;
 import 'package:socket_io_client/socket_io_client.dart' as IO;
 
-// ✅ لازم تكون هنا — خارج الكلاس تماماً
 @JS('playBuzzSound')
 external void _playBuzzSoundJS();
 
@@ -18,7 +12,8 @@ class SocketService {
 
   IO.Socket? _socket;
 
-  static const String serverUrl = 'https://quiz-buzzer-server-production.up.railway.app';
+  static const String serverUrl =
+      'https://quiz-buzzer-server-production.up.railway.app';
 
   IO.Socket get socket {
     _socket ??= _initSocket();
@@ -29,7 +24,7 @@ class SocketService {
     return IO.io(
       serverUrl,
       IO.OptionBuilder()
-          .setTransports(['websocket'])
+          .setTransports(['polling', 'websocket'])
           .disableAutoConnect()
           .enableReconnection()
           .setReconnectionAttempts(5)
